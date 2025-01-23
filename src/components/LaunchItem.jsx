@@ -6,7 +6,6 @@ const LaunchItem = ({ launch }) => {
     links,
     launch_success,
     details,
-    launch_year,
     launch_date_unix,
   } = launch;
 

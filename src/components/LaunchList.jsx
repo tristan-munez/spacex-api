@@ -77,7 +77,6 @@ const LaunchList = () => {
     }
   };
 
-  // Initial data load
   useEffect(() => {
     loadLaunches();
   }, []);
