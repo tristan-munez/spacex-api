@@ -36,37 +36,42 @@ const LaunchItem = ({ launch }) => {
 
   return (
     <div className="launch__item">
-      <h2>{mission_name}</h2>
-      <span className={`launch__status ${getStatusClass()}`}>{getStatusLabel()}</span>
+      <div className='row'>
+        <h2>{mission_name}</h2>
+        <span className={`launch__status ${getStatusClass()}`}>{getStatusLabel()}</span>
+      </div>
 
       {showDetails && (
         <>
-      <p className="launch__meta">
-        {timeSinceLaunch()} |{' '}
-        {links.article_link && (
-          <a href={links.article_link} target="_blank" rel="noopener noreferrer">
-            Article
-          </a>
-        )}
-        {links.video_link && (
-          <>
-            {' | '}
-            <a href={links.video_link} target="_blank" rel="noopener noreferrer">
-              Video
-            </a>
-          </>
-        )}
-      </p>
-      <div className="media">
-        {links.mission_patch_small ? (
-          <img src={links.mission_patch_small} alt={`${mission_name} patch`} />
-        ) : (
-          <div className="no-content">No Image Yet</div>
-        )}
-        <p>{details || 'No details available for this mission.'}</p>
-      </div>
-      </>
-    )}
+          <div className="launch__meta">
+            {timeSinceLaunch()}
+            {links.article_link && (
+              <>
+                {' | '}
+                <a href={links.article_link} target="_blank" rel="noopener noreferrer">
+                  Article
+                </a>
+              </>
+            )}
+            {links.video_link && (
+              <>
+                {' | '}
+                <a href={links.video_link} target="_blank" rel="noopener noreferrer">
+                  Video
+                </a>
+              </>
+            )}
+          </div>
+          <div className="media">
+            {links.mission_patch_small ? (
+              <img src={links.mission_patch_small} alt={`${mission_name} patch`} />
+            ) : (
+              <div className="no-content">No Image Yet</div>
+            )}
+            <p>{details || 'No details available for this mission.'}</p>
+          </div>
+        </>
+      )}
       <button onClick={toggleDetails} className="btn btn--primary">
         {showDetails ? 'HIDE' : 'SHOW'}
       </button>
