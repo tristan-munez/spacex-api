@@ -84,7 +84,9 @@ const LaunchList = () => {
 
   return (
     <>
-      <SearchBar onSearch={handleSearch} />
+      <div style={{ padding: "1rem" }}>
+        <SearchBar onSearch={handleSearch} />
+      </div>
       <div className="launch__wrapper launch__list">
         {firstLoad || filteredLaunches.length > 0 ? (
           filteredLaunches.map((launch) => (

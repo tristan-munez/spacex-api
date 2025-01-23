@@ -46,9 +46,9 @@ p {
 .container {
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
   width: 100%;
+  max-width: 800px; // The container's total maximum width
+  box-sizing: border-box; // Include padding in width calculation
 }
 
 .row {
@@ -86,16 +86,17 @@ p {
 }
 
 .search {
-  display: block;
   margin: 0 auto 2rem;
+  width: 100%; // Make the search bar span the full width of the container
+  box-sizing: border-box; // Ensure padding doesn’t increase total width
 }
 
 input[type='search'] {
+  width: 100%; // Search input spans the full width of the parent `.search`
+  padding: 1rem; // Inner padding for the input field
   border: 2px solid #eee;
   border-radius: 0;
-  padding: 1rem;
   transition: border 200ms ease;
-  width: 100%;
 
   &:focus {
     border: 2px solid #777;
@@ -114,6 +115,12 @@ input[type='search'] {
 .main__wrapper {
   display: block;
   margin: 0 auto;
+}
+
+h1 {
+  max-width: 800px;
+  margin: auto;
+  padding: 1rem;
 }
 
 h2 {

@@ -5,7 +5,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
 
   return (
-    <div className="App">
+    <div className="App container">
       <h1>SpaceX Launches</h1>
       <LaunchList />
     </div>
